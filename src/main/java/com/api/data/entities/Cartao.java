@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.api.data.enums.TipoCartao;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -46,6 +48,9 @@ public class Cartao {
 	
 	@Column(name = "flg_ativo", nullable = false)
 	private Boolean isAtivo;
+	
+	@Column(name = "tipo_cartao", nullable = false)
+	private TipoCartao tipoCartao;
 	
 	@ManyToOne(cascade = CascadeType.MERGE,fetch =  FetchType.LAZY)  
     @JoinColumn(name="id_pessoa", nullable = false)
